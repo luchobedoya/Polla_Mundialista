@@ -515,6 +515,7 @@ $surface: rgba(255, 255, 255, 0.74);
 }
 
 .field-control input {
+  box-sizing: border-box;
   width: 100%;
   height: 54px;
   padding: 0 56px 0 57px;
@@ -762,13 +763,11 @@ $surface: rgba(255, 255, 255, 0.74);
 }
 
 .primary-arrow {
-  position: absolute;
-  top: 50%;
-  right: 18px;
-  transform: translateY(-50%);
-  padding-right: 2px;
-  font-size: 1.55rem;
-  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.35rem;
+  line-height: 0;
+  margin-left: 4px;
 }
 
 .divider {
@@ -899,34 +898,103 @@ $surface: rgba(255, 255, 255, 0.74);
 
   .auth-shell {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-    align-content: center;
-    padding: 34px 18px;
+    justify-items: center;
+    gap: 30px;
+    align-content: start;
+    padding: clamp(38px, 7vw, 58px) 22px;
+  }
+
+  .brand-panel {
+    width: 100%;
   }
 
   .brand-lockup {
-    gap: 12px;
+    box-sizing: border-box;
+    width: min(100%, 560px);
+    gap: 18px;
+    padding: 24px 26px 26px;
+    border: 1px solid rgba(159, 171, 196, 0.26);
+    border-radius: 28px;
+    background:
+      linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.46)),
+      radial-gradient(circle at 18% 18%, rgba($yellow, 0.2), transparent 34%),
+      radial-gradient(circle at 82% 78%, rgba($blue, 0.14), transparent 36%);
+    box-shadow: 0 24px 54px rgba($blue-deep, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.86);
+    backdrop-filter: blur(22px) saturate(140%);
+    -webkit-backdrop-filter: blur(22px) saturate(140%);
     transform: none;
   }
 
   .trophy-emblem {
-    width: 88px;
-    height: 118px;
-    transform: scale(0.82);
-    transform-origin: center bottom;
+    z-index: 1;
+    width: 108px;
+    height: 146px;
+    transform: none;
+    filter: drop-shadow(0 18px 24px rgba($blue-deep, 0.16));
+  }
+
+  .emblem-globe {
+    left: 29px;
+    width: 56px;
+  }
+
+  .emblem-globe::before {
+    inset: 10px 6px;
+    border-width: 2.4px;
+  }
+
+  .emblem-globe::after {
+    inset: 19px 1px;
+    border-width: 2.4px;
+  }
+
+  .emblem-ribbon {
+    width: 26px;
+    height: 97px;
+    border-radius: 999px 999px 18px 18px;
+  }
+
+  .emblem-ribbon-yellow {
+    top: 33px;
+    margin-left: -29px;
+  }
+
+  .emblem-ribbon-blue {
+    top: 38px;
+    margin-left: -9px;
+  }
+
+  .emblem-ribbon-red {
+    top: 42px;
+    margin-left: 14px;
+  }
+
+  .emblem-base {
+    left: 30px;
+    bottom: 3px;
+    width: 56px;
+    height: 27px;
+    border-radius: 8px 8px 15px 15px;
+    font-size: 0.88rem;
+  }
+
+  .brand-copy {
+    position: relative;
+    z-index: 2;
   }
 
   .brand-title {
-    font-size: 2rem;
+    font-size: 2.18rem;
   }
 
   .brand-subtitle {
-    font-size: 1.35rem;
+    margin-top: 8px;
+    font-size: 1.46rem;
   }
 
   .brand-tagline {
-    margin-top: 10px;
-    font-size: 0.68rem;
+    margin-top: 12px;
+    font-size: 0.72rem;
   }
 
   .login-panel {
@@ -934,6 +1002,7 @@ $surface: rgba(255, 255, 255, 0.74);
   }
 
   .auth-card {
+    box-sizing: border-box;
     width: min(100%, 560px);
     min-height: auto;
     border-radius: 26px;
@@ -966,7 +1035,64 @@ $surface: rgba(255, 255, 255, 0.74);
 
 @media (max-width: 575.98px) {
   .auth-shell {
-    padding: 26px 14px 34px;
+    gap: 22px;
+    padding: 24px 16px 34px;
+  }
+
+  .brand-lockup {
+    gap: 16px;
+    padding: 20px 18px 22px;
+    border-radius: 24px;
+  }
+
+  .trophy-emblem {
+    width: 96px;
+    height: 130px;
+    filter: drop-shadow(0 14px 20px rgba($blue-deep, 0.14));
+  }
+
+  .emblem-globe {
+    left: 26px;
+    width: 51px;
+  }
+
+  .emblem-globe::before {
+    inset: 9px 6px;
+    border-width: 2.2px;
+  }
+
+  .emblem-globe::after {
+    inset: 17px 1px;
+    border-width: 2.2px;
+  }
+
+  .emblem-ribbon {
+    width: 24px;
+    height: 89px;
+    border-radius: 999px 999px 16px 16px;
+  }
+
+  .emblem-ribbon-yellow {
+    top: 30px;
+    margin-left: -27px;
+  }
+
+  .emblem-ribbon-blue {
+    top: 35px;
+    margin-left: -8px;
+  }
+
+  .emblem-ribbon-red {
+    top: 38px;
+    margin-left: 12px;
+  }
+
+  .emblem-base {
+    left: 27px;
+    bottom: 2px;
+    width: 51px;
+    height: 25px;
+    font-size: 0.8rem;
   }
 
   .auth-card {
@@ -985,6 +1111,18 @@ $surface: rgba(255, 255, 255, 0.74);
 
   .login-title {
     font-size: 2.15rem;
+  }
+
+  .brand-title {
+    font-size: 1.88rem;
+  }
+
+  .brand-subtitle {
+    font-size: 1.24rem;
+  }
+
+  .brand-tagline {
+    font-size: 0.64rem;
   }
 
   .login-description {
