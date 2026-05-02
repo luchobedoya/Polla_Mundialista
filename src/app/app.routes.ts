@@ -9,6 +9,10 @@ export const routes: Routes = [
         loadComponent: () => import('./ui/pages/auth/auth')
       },
       {
+        path: 'dashboard',
+        loadComponent: () => import('./ui/pages/dashboard/dashboard')
+      },
+      {
         path: '**',
         redirectTo: 'auth'
       }

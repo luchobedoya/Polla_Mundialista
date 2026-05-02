@@ -1,148 +1,173 @@
-<main class="auth-page" aria-labelledby="auth-title">
-  <div class="auth-background" aria-hidden="true">
-    <span class="motion-line motion-line-one"></span>
-    <span class="motion-line motion-line-two"></span>
-    <span class="motion-line motion-line-three"></span>
-    <span class="flag-wave flag-wave-yellow"></span>
-    <span class="flag-wave flag-wave-blue"></span>
-    <span class="flag-wave flag-wave-red"></span>
-    <span class="tech-sphere">
-      <span class="sphere-ring sphere-ring-one"></span>
-      <span class="sphere-ring sphere-ring-two"></span>
-      <span class="sphere-ring sphere-ring-three"></span>
+<main id="auth-main-container" data-test-id="auth-main-container" class="auth-page" aria-labelledby="auth-title">
+  <div id="auth-background-layer" data-test-id="auth-background-layer" class="auth-background" aria-hidden="true">
+    <span id="motion-line-1" data-test-id="motion-line-1" class="motion-line motion-line-one"></span>
+    <span id="motion-line-2" data-test-id="motion-line-2" class="motion-line motion-line-two"></span>
+    <span id="motion-line-3" data-test-id="motion-line-3" class="motion-line motion-line-three"></span>
+    <span id="flag-wave-yellow" data-test-id="flag-wave-yellow" class="flag-wave flag-wave-yellow"></span>
+    <span id="flag-wave-blue" data-test-id="flag-wave-blue" class="flag-wave flag-wave-blue"></span>
+    <span id="flag-wave-red" data-test-id="flag-wave-red" class="flag-wave flag-wave-red"></span>
+    <span id="tech-sphere-container" data-test-id="tech-sphere-container" class="tech-sphere">
+      <span id="sphere-ring-1" data-test-id="sphere-ring-1" class="sphere-ring sphere-ring-one"></span>
+      <span id="sphere-ring-2" data-test-id="sphere-ring-2" class="sphere-ring sphere-ring-two"></span>
+      <span id="sphere-ring-3" data-test-id="sphere-ring-3" class="sphere-ring sphere-ring-three"></span>
     </span>
-    <span class="dot dot-yellow dot-one"></span>
-    <span class="dot dot-blue dot-two"></span>
-    <span class="dot dot-red dot-three"></span>
-    <span class="dot dot-yellow dot-four"></span>
+    <span id="bg-dot-1" data-test-id="bg-dot-1" class="dot dot-yellow dot-one"></span>
+    <span id="bg-dot-2" data-test-id="bg-dot-2" class="dot dot-blue dot-two"></span>
+    <span id="bg-dot-3" data-test-id="bg-dot-3" class="dot dot-red dot-three"></span>
+    <span id="bg-dot-4" data-test-id="bg-dot-4" class="dot dot-yellow dot-four"></span>
   </div>
 
-  <div class="auth-shell">
-    <section class="brand-panel" aria-label="Marca Mundial Colombia 2026">
-      <div class="brand-lockup">
-        <div class="trophy-emblem" aria-hidden="true">
-          <span class="emblem-globe"></span>
-          <span class="emblem-ribbon emblem-ribbon-yellow"></span>
-          <span class="emblem-ribbon emblem-ribbon-blue"></span>
-          <span class="emblem-ribbon emblem-ribbon-red"></span>
-          <span class="emblem-base">26</span>
+  <div id="auth-shell-wrapper" data-test-id="auth-shell-wrapper" class="auth-shell">
+    <section id="brand-panel-section" data-test-id="brand-panel-section" class="brand-panel" aria-label="Marca Mundial Colombia 2026">
+      <div id="brand-lockup-container" data-test-id="brand-lockup-container" class="brand-lockup">
+        <div id="trophy-emblem-wrapper" data-test-id="trophy-emblem-wrapper" class="trophy-emblem" aria-hidden="true">
+          <span id="emblem-globe-icon" data-test-id="emblem-globe-icon" class="emblem-globe"></span>
+          <span id="emblem-ribbon-yellow" data-test-id="emblem-ribbon-yellow" class="emblem-ribbon emblem-ribbon-yellow"></span>
+          <span id="emblem-ribbon-blue" data-test-id="emblem-ribbon-blue" class="emblem-ribbon emblem-ribbon-blue"></span>
+          <span id="emblem-ribbon-red" data-test-id="emblem-ribbon-red" class="emblem-ribbon emblem-ribbon-red"></span>
+          <span id="emblem-base-text" data-test-id="emblem-base-text" class="emblem-base">26</span>
         </div>
 
-        <header class="brand-copy">
-          <p class="brand-title">WORLD CUP</p>
-          <p class="brand-subtitle">COLOMBIA 2026</p>
-          <p class="brand-tagline">UN PAÍS, UNA PASIÓN, UN SUEÑO.</p>
+        <header id="brand-copy-header" data-test-id="brand-copy-header" class="brand-copy">
+          <p id="brand-title-text" data-test-id="brand-title-text" class="brand-title">WORLD CUP</p>
+          <p id="brand-subtitle-text" data-test-id="brand-subtitle-text" class="brand-subtitle">COLOMBIA 2026</p>
+          <p id="brand-tagline-text" data-test-id="brand-tagline-text" class="brand-tagline">UN PAÍS, UNA PASIÓN, UN SUEÑO.</p>
         </header>
       </div>
     </section>
 
-    <section class="login-panel" aria-label="Inicio de sesión">
-      <div class="auth-card">
-        <header class="auth-card-header">
-          <button type="button" class="language-select" aria-label="Cambiar idioma">
-            <span aria-hidden="true">🌐</span>
-            <span>Español</span>
-            <span class="language-chevron" aria-hidden="true">˅</span>
+    <section id="login-panel-section" data-test-id="login-panel-section" class="login-panel" aria-label="Inicio de sesión">
+      <div id="auth-card-container" data-test-id="auth-card-container" class="auth-card">
+        <header id="auth-card-header" data-test-id="auth-card-header" class="auth-card-header">
+          <button id="language-select-btn" data-test-id="language-select-btn" type="button" class="language-select" aria-label="Cambiar idioma">
+            <span id="lang-icon-globe" data-test-id="lang-icon-globe" aria-hidden="true">🌐</span>
+            <span id="lang-text-es" data-test-id="lang-text-es">Español</span>
+            <span id="lang-icon-chevron" data-test-id="lang-icon-chevron" class="language-chevron" aria-hidden="true">˅</span>
           </button>
 
-          <div class="eyebrow-wrap">
-            <p class="eyebrow">BIENVENIDO</p>
-            <span class="eyebrow-line" aria-hidden="true"></span>
+          <div id="eyebrow-wrapper" data-test-id="eyebrow-wrapper" class="eyebrow-wrap">
+            <p id="eyebrow-text" data-test-id="eyebrow-text" class="eyebrow">BIENVENIDO</p>
+            <span id="eyebrow-line-deco" data-test-id="eyebrow-line-deco" class="eyebrow-line" aria-hidden="true"></span>
           </div>
 
-          <h1 id="auth-title" class="login-title">Inicia sesión</h1>
-          <p id="login-description" class="login-description">
+          <h1 id="auth-title" data-test-id="auth-title" class="login-title">Inicia sesión</h1>
+          <p id="login-description" data-test-id="login-description" class="login-description">
             Accede a tu cuenta para vivir toda la experiencia de la Copa Mundial 2026.
           </p>
         </header>
 
-        <form class="login-form" aria-describedby="login-description" (submit)="onLoginClick($event)">
-          <div class="field-group">
-            <label class="visually-hidden" for="auth-username">Correo electrónico o usuario</label>
-            <div class="field-control">
-              <span class="field-icon field-icon-user" aria-hidden="true"></span>
+        <form id="login-form" data-test-id="login-form" class="login-form" aria-describedby="login-description" [formGroup]="loginForm" (ngSubmit)="onLoginClick()">
+          <div id="field-group-username" data-test-id="field-group-username" class="field-group">
+            <label id="label-username" data-test-id="label-username" class="visually-hidden" for="auth-username">Correo electrónico o usuario</label>
+            <div id="field-control-username" data-test-id="field-control-username" class="field-control">
+              <span id="field-icon-user" data-test-id="field-icon-user" class="field-icon field-icon-user" aria-hidden="true"></span>
               <input
                 id="auth-username"
+                data-test-id="input-username"
                 name="username"
                 type="text"
                 autocomplete="username"
                 placeholder="Correo electrónico o usuario"
                 aria-describedby="login-description"
+                formControlName="username"
               >
+              @if (loginForm.get('username')?.invalid && loginForm.get('username')?.touched) {
+                <div id="field-error-message" data-test-id="field-error-message" class="field-error">
+                  <span id="error-icon" data-test-id="error-icon" class="error-icon">!</span>
+                  <span id="error-text" data-test-id="error-text" class="error-text">Correo electrónico o usuario es requerido</span>
+                </div>
+              }
             </div>
           </div>
 
-          <div class="field-group">
-            <label class="visually-hidden" for="auth-password">Contraseña</label>
-            <div class="field-control">
-              <span class="field-icon field-icon-lock" aria-hidden="true"></span>
+          <div id="field-group-password" data-test-id="field-group-password" class="field-group">
+            <label id="label-password" data-test-id="label-password" class="visually-hidden" for="auth-password">Contraseña</label>
+            <div id="field-control-password" data-test-id="field-control-password" class="field-control">
+              <span id="field-icon-lock" data-test-id="field-icon-lock" class="field-icon field-icon-lock" aria-hidden="true"></span>
               <input
                 id="auth-password"
+                data-test-id="input-password"
                 name="password"
                 [type]="showPassword ? 'text' : 'password'"
                 autocomplete="current-password"
                 placeholder="Contraseña"
+                formControlName="password"
               >
+              @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                <div id="field-error-message" data-test-id="field-error-message" class="field-error">
+                  <span id="error-icon" data-test-id="error-icon" class="error-icon">!</span>
+                  <span id="error-text" data-test-id="error-text" class="error-text">Contraseña es requerida</span>
+                </div>
+              }
               <button
+                id="btn-toggle-password"
+                data-test-id="btn-toggle-password"
                 type="button"
                 class="password-toggle"
                 (click)="onTogglePasswordVisibility()"
                 [attr.aria-pressed]="showPassword"
                 [attr.aria-label]="showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+                [disabled]="loginForm.get('password')?.invalid"
               >
-                <span class="password-eye" [class.is-visible]="showPassword" aria-hidden="true"></span>
+                <span id="icon-password-eye" data-test-id="icon-password-eye" class="password-eye" [class.is-visible]="showPassword" aria-hidden="true"></span>
               </button>
             </div>
           </div>
 
-          <div class="form-options">
-            <div class="remember-option">
+          <div id="form-options-container" data-test-id="form-options-container" class="form-options">
+            <div id="remember-option-wrapper" data-test-id="remember-option-wrapper" class="remember-option">
               <input
                 id="remember-me"
+                data-test-id="input-remember-me"
                 type="checkbox"
                 class="remember-input"
                 (change)="onRememberMeChange($event)"
               >
-              <label for="remember-me">Recordarme</label>
+              <label id="label-remember-me" data-test-id="label-remember-me" for="remember-me">Recordarme</label>
             </div>
 
-            <button type="button" class="text-action" (click)="onForgotPasswordClick()">
+            <button id="btn-forgot-password" data-test-id="btn-forgot-password" type="button" class="text-action" (click)="onForgotPasswordClick()">
               ¿Olvidaste tu contraseña?
             </button>
           </div>
 
-          <button type="submit" class="primary-action">
-            <span>Iniciar sesión</span>
-            <span class="primary-arrow" aria-hidden="true">→</span>
+          <button id="btn-submit-login" data-test-id="btn-submit-login" type="button" class="primary-action" (click)="onLoginClick()">
+            <span id="btn-submit-text" data-test-id="btn-submit-text">Iniciar sesión</span>
+            <span id="btn-submit-arrow" data-test-id="btn-submit-arrow" class="primary-arrow" aria-hidden="true">→</span>
           </button>
 
-          <div class="divider" aria-hidden="true">
-            <span></span>
-            <p>o continúa con</p>
-            <span></span>
+          <div id="divider-social" data-test-id="divider-social" class="divider" aria-hidden="true">
+            <span id="divider-line-left" data-test-id="divider-line-left"></span>
+            <p id="divider-text" data-test-id="divider-text">o continúa con</p>
+            <span id="divider-line-right" data-test-id="divider-line-right"></span>
           </div>
 
-          <div class="social-actions" aria-label="Opciones de inicio de sesión social">
-            <button type="button" class="social-button" (click)="onSocialLoginClick('Google')">
-              <span class="social-mark google-mark" aria-hidden="true">G</span>
-              <span>Google</span>
+          <div id="social-actions-container" data-test-id="social-actions-container" class="social-actions" aria-label="Opciones de inicio de sesión social">
+            <button id="btn-social-google" data-test-id="btn-social-google" type="button" class="social-button" (click)="onSocialLoginClick('Google')">
+              <span id="icon-social-google" data-test-id="icon-social-google" class="social-mark google-mark" aria-hidden="true">G</span>
+              <span id="text-social-google" data-test-id="text-social-google">Google</span>
             </button>
-            <button type="button" class="social-button" (click)="onSocialLoginClick('Apple')">
-              <span class="social-mark apple-mark" aria-hidden="true">A</span>
-              <span>Apple</span>
+            <button id="btn-social-apple" data-test-id="btn-social-apple" type="button" class="social-button" (click)="onSocialLoginClick('Apple')">
+              <span id="icon-social-apple" data-test-id="icon-social-apple" class="social-mark apple-mark" aria-hidden="true">A</span>
+              <span id="text-social-apple" data-test-id="text-social-apple">Apple</span>
             </button>
-            <button type="button" class="social-button" (click)="onSocialLoginClick('FIFA ID')">
-              <span class="social-mark fifa-mark" aria-hidden="true">ID</span>
-              <span>FIFA ID</span>
+            <button id="btn-social-fifa" data-test-id="btn-social-fifa" type="button" class="social-button" (click)="onSocialLoginClick('FIFA ID')">
+              <span id="icon-social-fifa" data-test-id="icon-social-fifa" class="social-mark fifa-mark" aria-hidden="true">ID</span>
+              <span id="text-social-fifa" data-test-id="text-social-fifa">FIFA ID</span>
             </button>
           </div>
         </form>
 
-        <p class="create-account">
+        <p id="create-account-text" data-test-id="create-account-text" class="create-account">
           ¿No tienes cuenta?
-          <button type="button" (click)="onCreateAccountClick()">Crear cuenta</button>
+          <button id="btn-create-account" data-test-id="btn-create-account" type="button" (click)="onCreateAccountClick()">Crear cuenta</button>
         </p>
       </div>
     </section>
   </div>
 </main>
+
+
+<h2>Form Valid: {{ loginForm.valid }} </h2>
+
+<pre>{{loginForm.value | json}}</pre>
