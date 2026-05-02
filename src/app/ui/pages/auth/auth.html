@@ -1,0 +1,148 @@
+<main class="auth-page" aria-labelledby="auth-title">
+  <div class="auth-background" aria-hidden="true">
+    <span class="motion-line motion-line-one"></span>
+    <span class="motion-line motion-line-two"></span>
+    <span class="motion-line motion-line-three"></span>
+    <span class="flag-wave flag-wave-yellow"></span>
+    <span class="flag-wave flag-wave-blue"></span>
+    <span class="flag-wave flag-wave-red"></span>
+    <span class="tech-sphere">
+      <span class="sphere-ring sphere-ring-one"></span>
+      <span class="sphere-ring sphere-ring-two"></span>
+      <span class="sphere-ring sphere-ring-three"></span>
+    </span>
+    <span class="dot dot-yellow dot-one"></span>
+    <span class="dot dot-blue dot-two"></span>
+    <span class="dot dot-red dot-three"></span>
+    <span class="dot dot-yellow dot-four"></span>
+  </div>
+
+  <div class="auth-shell">
+    <section class="brand-panel" aria-label="Marca Mundial Colombia 2026">
+      <div class="brand-lockup">
+        <div class="trophy-emblem" aria-hidden="true">
+          <span class="emblem-globe"></span>
+          <span class="emblem-ribbon emblem-ribbon-yellow"></span>
+          <span class="emblem-ribbon emblem-ribbon-blue"></span>
+          <span class="emblem-ribbon emblem-ribbon-red"></span>
+          <span class="emblem-base">26</span>
+        </div>
+
+        <header class="brand-copy">
+          <p class="brand-title">WORLD CUP</p>
+          <p class="brand-subtitle">COLOMBIA 2026</p>
+          <p class="brand-tagline">UN PAÍS, UNA PASIÓN, UN SUEÑO.</p>
+        </header>
+      </div>
+    </section>
+
+    <section class="login-panel" aria-label="Inicio de sesión">
+      <div class="auth-card">
+        <header class="auth-card-header">
+          <button type="button" class="language-select" aria-label="Cambiar idioma">
+            <span aria-hidden="true">🌐</span>
+            <span>Español</span>
+            <span class="language-chevron" aria-hidden="true">˅</span>
+          </button>
+
+          <div class="eyebrow-wrap">
+            <p class="eyebrow">BIENVENIDO</p>
+            <span class="eyebrow-line" aria-hidden="true"></span>
+          </div>
+
+          <h1 id="auth-title" class="login-title">Inicia sesión</h1>
+          <p id="login-description" class="login-description">
+            Accede a tu cuenta para vivir toda la experiencia de la Copa Mundial 2026.
+          </p>
+        </header>
+
+        <form class="login-form" aria-describedby="login-description" (submit)="onLoginClick($event)">
+          <div class="field-group">
+            <label class="visually-hidden" for="auth-username">Correo electrónico o usuario</label>
+            <div class="field-control">
+              <span class="field-icon field-icon-user" aria-hidden="true"></span>
+              <input
+                id="auth-username"
+                name="username"
+                type="text"
+                autocomplete="username"
+                placeholder="Correo electrónico o usuario"
+                aria-describedby="login-description"
+              >
+            </div>
+          </div>
+
+          <div class="field-group">
+            <label class="visually-hidden" for="auth-password">Contraseña</label>
+            <div class="field-control">
+              <span class="field-icon field-icon-lock" aria-hidden="true"></span>
+              <input
+                id="auth-password"
+                name="password"
+                [type]="showPassword ? 'text' : 'password'"
+                autocomplete="current-password"
+                placeholder="Contraseña"
+              >
+              <button
+                type="button"
+                class="password-toggle"
+                (click)="onTogglePasswordVisibility()"
+                [attr.aria-pressed]="showPassword"
+                [attr.aria-label]="showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'"
+              >
+                <span class="password-eye" [class.is-visible]="showPassword" aria-hidden="true"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-options">
+            <div class="remember-option">
+              <input
+                id="remember-me"
+                type="checkbox"
+                class="remember-input"
+                (change)="onRememberMeChange($event)"
+              >
+              <label for="remember-me">Recordarme</label>
+            </div>
+
+            <button type="button" class="text-action" (click)="onForgotPasswordClick()">
+              ¿Olvidaste tu contraseña?
+            </button>
+          </div>
+
+          <button type="submit" class="primary-action">
+            <span>Iniciar sesión</span>
+            <span class="primary-arrow" aria-hidden="true">→</span>
+          </button>
+
+          <div class="divider" aria-hidden="true">
+            <span></span>
+            <p>o continúa con</p>
+            <span></span>
+          </div>
+
+          <div class="social-actions" aria-label="Opciones de inicio de sesión social">
+            <button type="button" class="social-button" (click)="onSocialLoginClick('Google')">
+              <span class="social-mark google-mark" aria-hidden="true">G</span>
+              <span>Google</span>
+            </button>
+            <button type="button" class="social-button" (click)="onSocialLoginClick('Apple')">
+              <span class="social-mark apple-mark" aria-hidden="true">A</span>
+              <span>Apple</span>
+            </button>
+            <button type="button" class="social-button" (click)="onSocialLoginClick('FIFA ID')">
+              <span class="social-mark fifa-mark" aria-hidden="true">ID</span>
+              <span>FIFA ID</span>
+            </button>
+          </div>
+        </form>
+
+        <p class="create-account">
+          ¿No tienes cuenta?
+          <button type="button" (click)="onCreateAccountClick()">Crear cuenta</button>
+        </p>
+      </div>
+    </section>
+  </div>
+</main>
