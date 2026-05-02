@@ -1,0 +1,114 @@
+:host {
+  --polla-bg: #f8faff;
+  --polla-surface: #ffffff;
+  --polla-text: #07142f;
+  --polla-muted: #667085;
+  --polla-border: rgba(10, 31, 68, 0.08);
+  --polla-yellow: #ffc400;
+  --polla-green: #12b76a;
+  display: block;
+}
+
+:host-context(.dark),
+:host-context([data-theme='dark']) {
+  --polla-bg: #07111f;
+  --polla-surface: #0d1b2f;
+  --polla-text: #f8fafc;
+  --polla-muted: #b6c2d2;
+  --polla-border: rgba(255, 255, 255, 0.08);
+}
+
+.kpi-card {
+  position: relative;
+  background: var(--polla-surface);
+  border: 1px solid var(--polla-border);
+  border-radius: 16px;
+  padding: 20px;
+  overflow: hidden;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  height: 100%;
+
+  &:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+
+    &--gold {
+      background: rgba(255, 196, 0, 0.12);
+    }
+  }
+
+  &__label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--polla-muted);
+    text-transform: capitalize;
+  }
+
+  &__body {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+  }
+
+  &__value {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--polla-text);
+    letter-spacing: -0.5px;
+  }
+
+  &__indicator {
+    font-size: 0.78rem;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 2px 8px;
+
+    &--up {
+      color: var(--polla-green);
+      background: rgba(18, 183, 106, 0.1);
+    }
+  }
+
+  &__footer {
+    margin-bottom: 8px;
+  }
+
+  &__message {
+    font-size: 0.75rem;
+    color: var(--polla-muted);
+    font-style: italic;
+  }
+
+  &__chart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 55%;
+    height: 40px;
+    opacity: 0.7;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

@@ -1,1 +1,54 @@
-<p>nav-bar works!</p>
+<!-- Desktop / Tablet Navigation -->
+<nav id="nav-bar-desktop" class="nav-bar nav-bar--desktop" aria-label="Navegación principal">
+  <ul id="nav-bar-list" class="nav-bar__list">
+    @for (item of navItems; track item.key) {
+      <li id="nav-item-{{ item.key }}" class="nav-bar__item">
+        <button
+          id="nav-btn-{{ item.key }}"
+          type="button"
+          class="nav-bar__link"
+          [class.nav-bar__link--active]="activeItem === item.key"
+          (click)="onNavItemClick(item.key)"
+          [attr.aria-current]="activeItem === item.key ? 'page' : null"
+        >
+          {{ item.label }}
+        </button>
+      </li>
+    }
+  </ul>
+</nav>
+
+<!-- Mobile Bottom Navigation -->
+<nav id="nav-bar-mobile" class="nav-bar nav-bar--mobile" aria-label="Navegación principal mobile">
+  <ul id="nav-bar-mobile-list" class="nav-bar__mobile-list">
+    @for (item of navItems; track item.key; let i = $index) {
+      @if (i < 4) {
+        <li id="nav-mobile-item-{{ item.key }}" class="nav-bar__mobile-item">
+          <button
+            id="nav-mobile-btn-{{ item.key }}"
+            type="button"
+            class="nav-bar__mobile-link"
+            [class.nav-bar__mobile-link--active]="activeItem === item.key"
+            (click)="onNavItemClick(item.key)"
+          >
+            <span class="nav-bar__mobile-icon" aria-hidden="true">{{ item.icon }}</span>
+            <span class="nav-bar__mobile-label">{{ item.label }}</span>
+          </button>
+        </li>
+      }
+    }
+    <li id="nav-mobile-item-more" data-test-id="nav-mobile-item-more" class="nav-bar__mobile-item">
+      <button
+        id="nav-mobile-btn-more"
+        data-test-id="nav-mobile-btn-more"
+        type="button"
+        class="nav-bar__mobile-link"
+        [class.nav-bar__mobile-link--active]="activeItem === 'reglas'"
+        (click)="onNavItemClick('reglas')"
+      >
+        <span class="nav-bar__mobile-icon" aria-hidden="true">☰</span>
+        <span class="nav-bar__mobile-label">Más</span>
+      </button>
+    </li>
+  </ul>
+</nav>

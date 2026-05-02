@@ -1,1 +1,79 @@
-<p>league-cta works!</p>
+@if (variant === 'leagues') {
+  <!-- My Leagues variant -->
+  <section id="user-leagues-section" data-test-id="user-leagues-section" class="leagues" aria-label="Mis ligas">
+    <div id="leagues-header" data-test-id="leagues-header" class="leagues__header">
+      <h2 id="leagues-title" data-test-id="leagues-title" class="leagues__title">
+        <span class="leagues__title-icon" aria-hidden="true">🏟️</span>
+        Mis ligas
+      </h2>
+      <button
+        id="leagues-view-all"
+        data-test-id="leagues-view-all"
+        type="button"
+        class="leagues__view-all"
+        (click)="onViewAllLeaguesClick()"
+      >
+        Ver todas
+      </button>
+    </div>
+
+    <div id="leagues-list" data-test-id="leagues-list" class="leagues__list">
+      @for (league of leagues; track league.name) {
+        <button
+          id="league-item-{{ league.name }}"
+          type="button"
+          class="leagues__item"
+          (click)="onLeagueClick(league)"
+        >
+          <span class="leagues__item-icon" aria-hidden="true">{{ league.icon }}</span>
+          <div class="leagues__item-info">
+            <span class="leagues__item-name">{{ league.name }}</span>
+            <span class="leagues__item-participants">{{ league.participants }} participantes</span>
+          </div>
+          <div class="leagues__item-position">
+            <span class="leagues__item-pos-text">Posición: {{ league.position }}.º de {{ league.totalParticipants }}</span>
+            <span class="leagues__item-arrow" aria-hidden="true">›</span>
+          </div>
+        </button>
+      }
+    </div>
+  </section>
+} @else {
+  <!-- CTA variant -->
+  <section id="league-cta-section" data-test-id="league-cta-section" class="cta" aria-label="Crear o unirse a una liga">
+    <div id="cta-content" data-test-id="cta-content" class="cta__content">
+      <div id="cta-visual" data-test-id="cta-visual" class="cta__visual" aria-hidden="true">
+        <span class="cta__deco-ball">⚽</span>
+        <span class="cta__deco-star">✦</span>
+      </div>
+
+      <h2 id="cta-title" data-test-id="cta-title" class="cta__title">¿Aún no tienes liga?</h2>
+      <p id="cta-description" data-test-id="cta-description" class="cta__description">
+        Crea tu propia liga o únete a una y vive la competencia con tus amigos.
+      </p>
+
+      <div id="cta-actions" data-test-id="cta-actions" class="cta__actions">
+        <button
+          id="cta-btn-create"
+          data-test-id="cta-btn-create"
+          type="button"
+          class="cta__btn cta__btn--primary"
+          (click)="onCreateLeagueClick()"
+        >
+          <span aria-hidden="true">🏆</span>
+          Crear una liga
+        </button>
+        <button
+          id="cta-btn-join"
+          data-test-id="cta-btn-join"
+          type="button"
+          class="cta__btn cta__btn--secondary"
+          (click)="onJoinLeagueClick()"
+        >
+          <span aria-hidden="true">🤝</span>
+          Unirme a una liga
+        </button>
+      </div>
+    </div>
+  </section>
+}

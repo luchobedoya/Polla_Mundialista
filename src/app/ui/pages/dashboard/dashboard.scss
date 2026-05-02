@@ -1,0 +1,66 @@
+:host {
+  --polla-bg: #f0f4fa;
+  --polla-surface: #ffffff;
+  --polla-text: #07142f;
+  --polla-border: rgba(10, 31, 68, 0.08);
+  display: block;
+  min-height: 100vh;
+  background: var(--polla-bg);
+}
+
+:host-context(.dark),
+:host-context([data-theme='dark']) {
+  --polla-bg: #060e1a;
+  --polla-surface: #0d1b2f;
+  --polla-text: #f8fafc;
+  --polla-border: rgba(255, 255, 255, 0.08);
+}
+
+.dashboard {
+  min-height: 100vh;
+  background: var(--polla-bg);
+
+  // ===== Top Bar =====
+  &__topbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--polla-surface);
+    border-bottom: 1px solid var(--polla-border);
+    padding: 10px 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  }
+
+  // ===== Main Content =====
+  &__main {
+    padding: 24px 0;
+  }
+
+  // ===== Mobile Nav Spacer =====
+  &__mobile-nav {
+    // This is just a wrapper for the mobile nav-bar which positions itself fixed
+  }
+}
+
+// Mobile: add bottom padding for fixed nav
+@media (max-width: 767.98px) {
+  .dashboard {
+    &__main {
+      padding: 16px 0;
+      padding-bottom: 80px; // Space for fixed bottom nav
+    }
+
+    &__topbar {
+      padding: 8px 0;
+    }
+  }
+}
+
+// Tablet adjustments
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .dashboard {
+    &__main {
+      padding: 20px 0;
+    }
+  }
+}

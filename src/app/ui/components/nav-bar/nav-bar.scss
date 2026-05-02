@@ -1,0 +1,142 @@
+:host {
+  --polla-text: #07142f;
+  --polla-muted: #667085;
+  --polla-blue: #0757ff;
+  --polla-surface: #ffffff;
+  display: block;
+}
+
+:host-context(.dark),
+:host-context([data-theme='dark']) {
+  --polla-text: #f8fafc;
+  --polla-muted: #b6c2d2;
+  --polla-surface: #0d1b2f;
+}
+
+.nav-bar {
+  &--desktop {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &--mobile {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: var(--polla-surface);
+    border-top: 1px solid rgba(10, 31, 68, 0.08);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.06);
+    padding: 4px 0 calc(4px + env(safe-area-inset-bottom, 0px));
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: none;
+    background: transparent;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--polla-muted);
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--polla-text);
+      background: rgba(7, 87, 255, 0.06);
+    }
+
+    &--active {
+      color: var(--polla-blue);
+      font-weight: 600;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 16px;
+        right: 16px;
+        height: 2.5px;
+        background: var(--polla-blue);
+        border-radius: 2px;
+      }
+    }
+  }
+
+  // Mobile list
+  &__mobile-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__mobile-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 8px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    color: var(--polla-muted);
+    transition: color 0.2s ease;
+
+    &--active {
+      color: var(--polla-blue);
+    }
+  }
+
+  &__mobile-icon {
+    font-size: 1.25rem;
+    line-height: 1;
+  }
+
+  &__mobile-label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .nav-bar {
+    &__link {
+      padding: 6px 10px;
+      font-size: 0.82rem;
+    }
+  }
+}
+
+@media (max-width: 767.98px) {
+  .nav-bar {
+    &--desktop {
+      display: none;
+    }
+
+    &--mobile {
+      display: block;
+    }
+  }
+}

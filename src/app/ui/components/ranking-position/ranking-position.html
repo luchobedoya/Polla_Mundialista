@@ -1,1 +1,56 @@
-<p>ranking-position works!</p>
+<section id="ranking-section" data-test-id="ranking-section" class="ranking" aria-label="Top ranking">
+  <!-- Header -->
+  <div id="ranking-header" data-test-id="ranking-header" class="ranking__header">
+    <h2 id="ranking-title" data-test-id="ranking-title" class="ranking__title">
+      <span class="ranking__title-icon" aria-hidden="true">🏅</span>
+      Top ranking
+    </h2>
+    <button
+      id="ranking-view-full"
+      data-test-id="ranking-view-full"
+      type="button"
+      class="ranking__view-all"
+      (click)="onViewFullRankingClick()"
+    >
+      Ver ranking completo
+    </button>
+  </div>
+
+  <!-- Table header -->
+  <div id="ranking-table-header" data-test-id="ranking-table-header" class="ranking__table-header">
+    <span class="ranking__col ranking__col--pos">#</span>
+    <span class="ranking__col ranking__col--user">Usuario</span>
+    <span class="ranking__col ranking__col--pts">Puntos</span>
+  </div>
+
+  <!-- User rows -->
+  <div id="ranking-list" data-test-id="ranking-list" class="ranking__list">
+    @for (user of users; track user.position) {
+      <button
+        id="ranking-user-{{ user.position }}"
+        type="button"
+        class="ranking__row"
+        [class.ranking__row--current]="user.isCurrent"
+        (click)="onUserClick(user)"
+      >
+        <span class="ranking__col ranking__col--pos">
+          @if (user.medal) {
+            <span
+              class="ranking__medal ranking__medal--{{ user.medal }}"
+              aria-label="Posición {{ user.position }}"
+            >
+              {{ user.position }}
+            </span>
+          } @else {
+            {{ user.position }}
+          }
+        </span>
+        <span class="ranking__col ranking__col--user">
+          <span class="ranking__avatar">{{ user.name.charAt(0) }}</span>
+          <span class="ranking__name">{{ user.name }}</span>
+        </span>
+        <span class="ranking__col ranking__col--pts">{{ user.points }}</span>
+      </button>
+    }
+  </div>
+</section>

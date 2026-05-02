@@ -1,1 +1,103 @@
-<p>upcoming-matches works!</p>
+<section id="upcoming-matches-section" data-test-id="upcoming-matches-section" class="matches" aria-label="Próximos partidos">
+  <!-- Header -->
+  <div id="upcoming-matches-header" data-test-id="upcoming-matches-header" class="matches__header">
+    <h2 id="upcoming-matches-title" data-test-id="upcoming-matches-title" class="matches__title">
+      <span class="matches__title-icon" aria-hidden="true">⚽</span>
+      Próximos partidos
+    </h2>
+    <button
+      id="upcoming-matches-view-all"
+      data-test-id="upcoming-matches-view-all"
+      type="button"
+      class="matches__view-all"
+      (click)="onViewAllClick()"
+    >
+      Ver todos
+    </button>
+  </div>
+
+  <!-- Match list -->
+  <div id="upcoming-matches-list" data-test-id="upcoming-matches-list" class="matches__list">
+    @for (match of matches; track match.group) {
+      <div
+        id="match-row-{{ match.group }}"
+        class="matches__row"
+      >
+        <!-- Group badge -->
+        <span
+          id="match-group-{{ match.group }}"
+          class="matches__group-badge"
+          [style.background]="match.groupColor + '14'"
+          [style.color]="match.groupColor"
+        >
+          {{ match.group }}
+        </span>
+
+        <!-- Home team -->
+        <div id="match-home-{{ match.group }}" class="matches__team matches__team--home">
+          <span class="matches__flag" aria-hidden="true">{{ match.homeFlag }}</span>
+          <span class="matches__team-name">{{ match.homeTeam }}</span>
+        </div>
+
+        <!-- Match info -->
+        <div id="match-info-{{ match.group }}" class="matches__info">
+          <span class="matches__datetime">
+            <strong>{{ match.date }}</strong> {{ match.time }}
+          </span>
+          <span class="matches__stadium">{{ match.stadium }}</span>
+        </div>
+
+        <!-- Away team -->
+        <div id="match-away-{{ match.group }}" class="matches__team matches__team--away">
+          <span class="matches__team-name">{{ match.awayTeam }}</span>
+          <span class="matches__flag" aria-hidden="true">{{ match.awayFlag }}</span>
+        </div>
+
+        <!-- Score selectors -->
+        <div id="match-score-{{ match.group }}" class="matches__score">
+          <select
+            id="match-home-score-{{ match.group }}"
+            class="matches__score-select"
+            [value]="match.homeScore"
+            (change)="onScoreChange(match, 'home', +$any($event.target).value)"
+            aria-label="Goles equipo local"
+          >
+            @for (n of [0,1,2,3,4,5,6,7,8,9]; track n) {
+              <option [value]="n" [selected]="match.homeScore === n">{{ n }}</option>
+            }
+          </select>
+          <span class="matches__score-separator">-</span>
+          <select
+            id="match-away-score-{{ match.group }}"
+            class="matches__score-select"
+            [value]="match.awayScore"
+            (change)="onScoreChange(match, 'away', +$any($event.target).value)"
+            aria-label="Goles equipo visitante"
+          >
+            @for (n of [0,1,2,3,4,5,6,7,8,9]; track n) {
+              <option [value]="n" [selected]="match.awayScore === n">{{ n }}</option>
+            }
+          </select>
+        </div>
+
+        <!-- Closing time -->
+        <span
+          id="match-closing-{{ match.group }}"
+          class="matches__closing"
+        >
+          Cierre: {{ match.closingTime }}
+        </span>
+
+        <!-- Predict button -->
+        <button
+          id="match-predict-btn-{{ match.group }}"
+          type="button"
+          class="matches__predict-btn"
+          (click)="onPredictClick(match)"
+        >
+          Predecir
+        </button>
+      </div>
+    }
+  </div>
+</section>

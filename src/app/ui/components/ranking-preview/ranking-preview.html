@@ -1,1 +1,38 @@
-<p>ranking-preview works!</p>
+<article id="ranking-preview-card" data-test-id="ranking-preview-card" class="kpi-card" aria-label="Posición en el ranking">
+  <div id="ranking-preview-header" data-test-id="ranking-preview-header" class="kpi-card__header">
+    <span id="ranking-preview-icon" data-test-id="ranking-preview-icon" class="kpi-card__icon kpi-card__icon--blue" aria-hidden="true">
+      🏅
+    </span>
+    <span id="ranking-preview-label" data-test-id="ranking-preview-label" class="kpi-card__label">Posición en el ranking</span>
+  </div>
+
+  <div id="ranking-preview-body" data-test-id="ranking-preview-body" class="kpi-card__body">
+    <span id="ranking-preview-value" data-test-id="ranking-preview-value" class="kpi-card__value">7.º</span>
+  </div>
+
+  <div id="ranking-preview-footer" data-test-id="ranking-preview-footer" class="kpi-card__footer">
+    <span id="ranking-preview-subtext" data-test-id="ranking-preview-subtext" class="kpi-card__subtext">de 248 participantes</span>
+  </div>
+
+  <!-- Mini decorative chart -->
+  <div id="ranking-preview-chart" data-test-id="ranking-preview-chart" class="kpi-card__chart" aria-hidden="true">
+    <svg viewBox="0 0 120 40" preserveAspectRatio="none">
+      <polyline
+        points="0,30 20,28 40,25 60,18 80,15 100,10 120,8"
+        fill="none"
+        stroke="#0757ff"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <linearGradient id="chartGradBlue" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#0757ff" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#0757ff" stop-opacity="0"/>
+      </linearGradient>
+      <polygon
+        points="0,30 20,28 40,25 60,18 80,15 100,10 120,8 120,40 0,40"
+        fill="url(#chartGradBlue)"
+      />
+    </svg>
+  </div>
+</article>

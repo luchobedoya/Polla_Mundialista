@@ -1,1 +1,33 @@
-<p>predictions works!</p>
+<article id="predictions-card" data-test-id="predictions-card" class="kpi-card" aria-label="Predicciones acertadas">
+  <div id="predictions-header" data-test-id="predictions-header" class="kpi-card__header">
+    <span id="predictions-icon" data-test-id="predictions-icon" class="kpi-card__icon kpi-card__icon--green" aria-hidden="true">
+      🎯
+    </span>
+    <span id="predictions-label" data-test-id="predictions-label" class="kpi-card__label">Predicciones acertadas</span>
+  </div>
+
+  <div id="predictions-body" data-test-id="predictions-body" class="kpi-card__body">
+    <div id="predictions-values" data-test-id="predictions-values" class="kpi-card__values">
+      <span id="predictions-value" data-test-id="predictions-value" class="kpi-card__value">18</span>
+      <span id="predictions-subtext" data-test-id="predictions-subtext" class="kpi-card__subtext">de 32 partidos</span>
+    </div>
+
+    <!-- Circular progress -->
+    <div id="predictions-progress" data-test-id="predictions-progress" class="kpi-card__progress" aria-label="56% de acierto">
+      <svg viewBox="0 0 44 44" class="kpi-card__progress-ring">
+        <circle cx="22" cy="22" r="18" fill="none" stroke="rgba(10,31,68,0.06)" stroke-width="3.5"/>
+        <circle
+          cx="22" cy="22" r="18"
+          fill="none"
+          stroke="#12b76a"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          stroke-dasharray="113.1"
+          stroke-dashoffset="49.76"
+          transform="rotate(-90 22 22)"
+        />
+      </svg>
+      <span id="predictions-percent" data-test-id="predictions-percent" class="kpi-card__progress-text">56%</span>
+    </div>
+  </div>
+</article>

@@ -1,1 +1,41 @@
-<p>accumulated-points works!</p>
+<article id="accumulated-points-card" data-test-id="accumulated-points-card" class="kpi-card" aria-label="Puntos acumulados">
+  <div id="accumulated-points-header" data-test-id="accumulated-points-header" class="kpi-card__header">
+    <span id="accumulated-points-icon" data-test-id="accumulated-points-icon" class="kpi-card__icon kpi-card__icon--gold" aria-hidden="true">
+      ⭐
+    </span>
+    <span id="accumulated-points-label" data-test-id="accumulated-points-label" class="kpi-card__label">Puntos acumulados</span>
+  </div>
+
+  <div id="accumulated-points-body" data-test-id="accumulated-points-body" class="kpi-card__body">
+    <span id="accumulated-points-value" data-test-id="accumulated-points-value" class="kpi-card__value">1.250 pts</span>
+    <span id="accumulated-points-indicator" data-test-id="accumulated-points-indicator" class="kpi-card__indicator kpi-card__indicator--up">
+      <span aria-hidden="true">↑</span> +120
+    </span>
+  </div>
+
+  <div id="accumulated-points-footer" data-test-id="accumulated-points-footer" class="kpi-card__footer">
+    <span id="accumulated-points-message" data-test-id="accumulated-points-message" class="kpi-card__message">¡Sigue así, vas muy bien!</span>
+  </div>
+
+  <!-- Mini decorative chart -->
+  <div id="accumulated-points-chart" data-test-id="accumulated-points-chart" class="kpi-card__chart" aria-hidden="true">
+    <svg viewBox="0 0 120 40" preserveAspectRatio="none">
+      <polyline
+        points="0,35 15,30 30,32 45,25 60,20 75,22 90,12 105,8 120,5"
+        fill="none"
+        stroke="#ffc400"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <linearGradient id="chartGradGold" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ffc400" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#ffc400" stop-opacity="0"/>
+      </linearGradient>
+      <polygon
+        points="0,35 15,30 30,32 45,25 60,20 75,22 90,12 105,8 120,5 120,40 0,40"
+        fill="url(#chartGradGold)"
+      />
+    </svg>
+  </div>
+</article>

@@ -1,49 +1,76 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <app-header />
+<div id="dashboard-container" data-test-id="dashboard-container" class="dashboard">
+  <!-- ===== Top Bar ===== -->
+  <header id="dashboard-topbar" data-test-id="dashboard-topbar" class="dashboard__topbar">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-auto">
+          <app-header />
+        </div>
+        <div class="col d-none d-md-block">
+          <app-nav-bar />
+        </div>
+        <div class="col-auto">
+          <app-profile-settings />
+        </div>
+      </div>
     </div>
-    <div class="col">
-      <app-nav-bar />
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main id="dashboard-main" data-test-id="dashboard-main" class="dashboard__main">
+    <div class="container-fluid">
+
+      <!-- Banner Row -->
+      <div id="dashboard-banner-row" data-test-id="dashboard-banner-row" class="row mb-4">
+        <div class="col-12">
+          <app-banner />
+        </div>
+      </div>
+
+      <!-- KPI Cards Row -->
+      <div id="dashboard-kpi-row" data-test-id="dashboard-kpi-row" class="row g-3 mb-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <app-accumulated-points />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <app-ranking-preview />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <app-predictions />
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <app-matches-countdown />
+        </div>
+      </div>
+
+      <!-- Content Row: Matches + Ranking + Leagues -->
+      <div id="dashboard-content-row" data-test-id="dashboard-content-row" class="row g-3 mb-4">
+        <div class="col-12 col-lg-6">
+          <app-upcoming-matches />
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <app-ranking-position />
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <app-league-cta variant="leagues" />
+        </div>
+      </div>
+
+      <!-- Bottom Row: News + CTA -->
+      <div id="dashboard-bottom-row" data-test-id="dashboard-bottom-row" class="row g-3 mb-4">
+        <div class="col-12 col-lg-8">
+          <app-news-tips />
+        </div>
+        <div class="col-12 col-lg-4">
+          <app-league-cta variant="cta" />
+        </div>
+      </div>
+
     </div>
-    <div class="col">
-      <app-profile-settings />
-    </div>
-  </div>
-   <div class="row">
-    <div class="col">
-      <app-banner />
-    </div>
-  </div>
-   <div class="row">
-    <div class="col">
-      <app-accumulated-points />
-    </div>
-    <div class="col">
-      <app-upcoming-matches />
-    </div>
-    <div class="col">
-      <app-predictions />
-    </div>
-    <div class="col">
-      <app-matches-countdown />
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-     <app-upcoming-matches />
-    </div>
-    <div class="col">
-      <app-ranking-position />
-    </div>
-    <div class="col">
-      <app-league-cta />
-    </div>
-    <div class="col">
-      <app-news-tips />
-    </div>
-    <div class="col">
-      <app-league-cta />
-    </div>
+  </main>
+
+  <!-- Mobile Bottom Nav -->
+  <div id="dashboard-mobile-nav" data-test-id="dashboard-mobile-nav" class="dashboard__mobile-nav d-md-none">
+    <app-nav-bar />
   </div>
 </div>

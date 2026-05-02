@@ -1,1 +1,51 @@
-<p>banner works!</p>
+<section id="banner-hero" data-test-id="banner-hero" class="banner" aria-label="Banner principal">
+  <div id="banner-content" data-test-id="banner-content" class="banner__content">
+    <span id="banner-badge" data-test-id="banner-badge" class="banner__badge">¡EL MUNDIAL NOS UNE!</span>
+
+    <h1 id="banner-title" data-test-id="banner-title" class="banner__title">
+      Vive la <em class="banner__highlight banner__highlight--yellow">pasión</em> del Mundial
+      y <em class="banner__highlight banner__highlight--blue">compite</em> con tus predicciones
+    </h1>
+
+    <p id="banner-description" data-test-id="banner-description" class="banner__description">
+      Acierta resultados, suma puntos y demuestra que eres el mejor estratega del Mundial 2026.
+    </p>
+
+    <div id="banner-actions" data-test-id="banner-actions" class="banner__actions">
+      <button
+        id="banner-btn-predictions"
+        data-test-id="banner-btn-predictions"
+        type="button"
+        class="banner__btn banner__btn--primary"
+        (click)="onMakePredictionsClick()"
+      >
+        <span class="banner__btn-icon" aria-hidden="true">⚽</span>
+        <span>Hacer mis predicciones</span>
+        <span class="banner__btn-arrow" aria-hidden="true">›</span>
+      </button>
+
+      <button
+        id="banner-btn-ranking"
+        data-test-id="banner-btn-ranking"
+        type="button"
+        class="banner__btn banner__btn--secondary"
+        (click)="onViewRankingClick()"
+      >
+        <span class="banner__btn-icon" aria-hidden="true">📊</span>
+        <span>Ver ranking</span>
+      </button>
+    </div>
+  </div>
+
+  <div id="banner-visual" data-test-id="banner-visual" class="banner__visual" aria-hidden="true">
+    <!-- CSS-only decorative elements: ball, trophy, stadium silhouette -->
+    <span class="banner__deco-ball"></span>
+    <span class="banner__deco-trophy">🏆</span>
+    <span class="banner__deco-star banner__deco-star--1">✦</span>
+    <span class="banner__deco-star banner__deco-star--2">✦</span>
+    <span class="banner__deco-star banner__deco-star--3">⚽</span>
+    <span class="banner__deco-stripe banner__deco-stripe--yellow"></span>
+    <span class="banner__deco-stripe banner__deco-stripe--blue"></span>
+    <span class="banner__deco-stripe banner__deco-stripe--red"></span>
+  </div>
+</section>
