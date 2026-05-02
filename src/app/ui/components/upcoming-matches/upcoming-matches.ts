@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './upcoming-matches.html',
   styleUrl: './upcoming-matches.scss',
 })
-export class UpcomingMatches {
+export default class UpcomingMatches {
 
 }

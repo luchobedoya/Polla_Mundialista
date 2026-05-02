@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './news-tips.html',
   styleUrl: './news-tips.scss',
 })
-export class NewsTips {
+export default class NewsTips {
 
 }

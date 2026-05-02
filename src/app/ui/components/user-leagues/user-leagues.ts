@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './user-leagues.html',
   styleUrl: './user-leagues.scss',
 })
-export class UserLeagues {
+export default class UserLeagues {
 
 }

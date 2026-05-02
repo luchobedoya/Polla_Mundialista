@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './predictions.html',
   styleUrl: './predictions.scss',
 })
-export class Predictions {
+export default class Predictions {
 
 }

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './profile-settings.html',
   styleUrl: './profile-settings.scss',
 })
-export class ProfileSettings {
+export default class ProfileSettings {
 
 }

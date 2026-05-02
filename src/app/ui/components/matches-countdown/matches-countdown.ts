@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './matches-countdown.html',
   styleUrl: './matches-countdown.scss',
 })
-export class MatchesCountdown {
+export default class MatchesCountdown {
 
 }

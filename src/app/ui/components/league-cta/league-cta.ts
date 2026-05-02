@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './league-cta.html',
   styleUrl: './league-cta.scss',
 })
-export class LeagueCta {
+export default class LeagueCta {
 
 }

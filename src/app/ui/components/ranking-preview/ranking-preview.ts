@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './ranking-preview.html',
   styleUrl: './ranking-preview.scss',
 })
-export class RankingPreview {
+export default class RankingPreview {
 
 }

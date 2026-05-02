@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   templateUrl: './accumulated-points.html',
   styleUrl: './accumulated-points.scss',
 })
-export class AccumulatedPoints {
+export default class AccumulatedPoints {
 
 }
