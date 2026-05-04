@@ -1,0 +1,67 @@
+<div
+  class="modal fade"
+  [class.show]="isOpen()"
+  [id]="modalId()"
+  tabindex="-1"
+  role="dialog"
+  [style.display]="isOpen() ? 'block' : 'none'"
+  [attr.aria-labelledby]="title() ? titleId() : null"
+  [attr.aria-label]="!title() ? ariaLabel() : null"
+  [attr.aria-hidden]="isOpen() ? null : 'true'"
+  [attr.aria-modal]="isOpen() ? 'true' : null"
+  (click)="onBackdropClick($event)"
+>
+  <div [class]="dialogClasses()">
+    <div class="modal-content">
+      @if (showHeader()) {
+        <div class="modal-header">
+          @if (title()) {
+            <h5 class="modal-title" [id]="titleId()">{{ title() }}</h5>
+          }
+
+          <ng-content select="[modal-header-extra]" />
+
+          @if (showCloseButton()) {
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              (click)="hide()"
+            ></button>
+          }
+        </div>
+      }
+
+      <div class="modal-body">
+        @if (body()) {
+          <p class="mb-0">{{ body() }}</p>
+        }
+
+        <ng-content />
+      </div>
+
+      @if (showFooter()) {
+        <div class="modal-footer">
+          <ng-content select="[modal-footer-extra]" />
+
+          @for (action of actions(); track action.id) {
+            <button
+              type="button"
+              [class]="buttonClass(action)"
+              [disabled]="action.disabled ?? false"
+              [attr.data-bs-dismiss]="action.dismissOnClick ? 'modal' : null"
+              (click)="onAction(action)"
+            >
+              {{ action.label }}
+            </button>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</div>
+
+@if (isOpen()) {
+  <div class="modal-backdrop fade show"></div>
+}

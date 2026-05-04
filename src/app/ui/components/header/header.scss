@@ -19,14 +19,43 @@
 .header {
   display: flex;
   align-items: center;
+  gap: 12px;
   height: 100%;
 
   &__brand {
     display: flex;
     align-items: center;
     gap: 10px;
-    cursor: default;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
     user-select: none;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__action {
+    min-height: 34px;
+    padding: 0 12px;
+    border: 1px solid rgba(7, 87, 255, 0.18);
+    border-radius: 8px;
+    background: var(--polla-surface);
+    color: var(--polla-blue);
+    font-size: 0.85rem;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+
+    &--primary {
+      background: var(--polla-blue);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(7, 87, 255, 0.2);
+    }
   }
 
   &__logo {
@@ -54,8 +83,54 @@
   }
 }
 
+.header-modal {
+  &__params {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin: 16px 0 0;
+  }
+
+  &__param {
+    padding: 10px 12px;
+    border: 1px solid rgba(7, 20, 47, 0.08);
+    border-radius: 8px;
+    background: rgba(7, 87, 255, 0.04);
+
+    dt {
+      margin-bottom: 4px;
+      color: var(--polla-muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    dd {
+      margin: 0;
+      color: var(--polla-text);
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+  }
+
+  &__result {
+    margin: 16px 0 0;
+    color: var(--polla-muted);
+    font-size: 0.95rem;
+  }
+
+  &__origin {
+    margin-right: auto;
+    color: var(--polla-muted);
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+}
+
 @media (max-width: 767.98px) {
   .header {
+    gap: 8px;
+
     &__title {
       font-size: 1rem;
     }
@@ -67,6 +142,18 @@
       &-trophy {
         font-size: 18px;
       }
+    }
+
+    &__action {
+      min-height: 32px;
+      padding: 0 10px;
+      font-size: 0.8rem;
+    }
+  }
+
+  .header-modal {
+    &__params {
+      grid-template-columns: 1fr;
     }
   }
 }

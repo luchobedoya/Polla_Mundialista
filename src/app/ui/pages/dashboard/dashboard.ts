@@ -11,6 +11,7 @@ import MatchesCountdown from '../../components/matches-countdown/matches-countdo
 import RankingPosition from '../../components/ranking-position/ranking-position';
 import LeagueCta from '../../components/league-cta/league-cta';
 import NewsTips from '../../components/news-tips/news-tips';
+import { ModalView } from '../../components/modal-view/modal-view';
 
 @Component({
   selector: 'app-dashboard',
@@ -27,6 +28,7 @@ import NewsTips from '../../components/news-tips/news-tips';
     RankingPosition,
     LeagueCta,
     NewsTips,
+    ModalView
   ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.scss',

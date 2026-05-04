@@ -1,8 +1,67 @@
 <header id="header-main" data-test-id="header-main" class="header" aria-label="Marca principal">
-  <div id="header-brand" data-test-id="header-brand" class="header__brand">
+  <button
+    id="header-brand"
+    data-test-id="header-brand"
+    class="header__brand"
+    type="button"
+    (click)="openModal(infoModalConfig)"
+  >
     <span id="header-logo" data-test-id="header-logo" class="header__logo" aria-hidden="true">
       <span class="header__logo-trophy">🏆</span>
     </span>
     <span id="header-title" data-test-id="header-title" class="header__title">Polla Mundialista 2026</span>
+  </button>
+
+  <div id="header-actions" data-test-id="header-actions" class="header__actions">
+    <button
+      id="header-info-button"
+      data-test-id="header-info-button"
+      class="header__action"
+      type="button"
+      (click)="openModal(infoModalConfig)"
+    >
+      Info
+    </button>
+    <button
+      id="header-rules-button"
+      data-test-id="header-rules-button"
+      class="header__action header__action--primary"
+      type="button"
+      (click)="openModal(rulesModalConfig)"
+    >
+      Reglas
+    </button>
   </div>
 </header>
+
+<!-- <div *ngIf="showNavBar" class="header__nav">
+  <app-modal-view
+  [modalId]="modalConfig().modalId"
+  [title]="modalConfig().title"
+  [body]="modalConfig().body"
+  [size]="modalConfig().size"
+  [centered]="modalConfig().centered"
+  [scrollable]="modalConfig().scrollable"
+  [closeOnBackdrop]="modalConfig().closeOnBackdrop"
+  [closeOnEscape]="modalConfig().closeOnEscape"
+  [actions]="modalConfig().actions"
+  [isOpen]="modalOpen()"
+  (isOpenChange)="modalOpen.set($event)"
+  (actionSelected)="handleModalAction($event)"
+  (opened)="onModalOpened()"
+  (closed)="onModalClosed()"
+>
+  <dl class="header-modal__params">
+    @for (parameter of modalParameters(); track parameter.label) {
+      <div class="header-modal__param">
+        <dt>{{ parameter.label }}</dt>
+        <dd>{{ parameter.value }}</dd>
+      </div>
+    }
+  </dl>
+
+  <p class="header-modal__result">{{ modalResultMessage() }}</p>
+
+  <span modal-footer-extra class="header-modal__origin">Origen: Header</span>
+</app-modal-view>
+</div> -->
